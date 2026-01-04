@@ -19,6 +19,7 @@ app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? [
         'https://yourname1218.github.io',
+        'https://campus.chnpin.xx.kg',
         'http://localhost:3000'
       ]
     : '*',
