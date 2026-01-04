@@ -1,0 +1,95 @@
+========================================
+🎨 前端部署快速步驟
+========================================
+
+【前置條件】
+✅ Render 後端已部署：https://wa-bao-qu-campus.onrender.com
+✅ 資料庫已初始化成功
+
+========================================
+步驟 1：修改本機檔案（2個檔案）
+========================================
+
+【檔案 1】建立 client/.env.production
+-------------------
+路徑：C:\test\client\.env.production
+
+內容：
+VITE_API_URL=https://wa-bao-qu-campus.onrender.com
+
+【檔案 2】修改 server/server.js
+-------------------
+路徑：C:\test\server\server.js
+
+找到這一段（約第18-24行）：
+  origin: process.env.NODE_ENV === 'production' 
+    ? [
+        'https://your-github-username.github.io',
+        ...
+
+改成：
+  origin: process.env.NODE_ENV === 'production' 
+    ? [
+        'https://Yourname1218.github.io',  ← 改成你的GitHub名稱
+        ...
+
+========================================
+步驟 2：上傳到 GitHub
+========================================
+
+在 CMD 執行（專案根目錄）：
+git add .
+git commit -m "Configure frontend for deployment"
+git push
+
+========================================
+步驟 3：在 GitHub 網站設定（3個步驟）
+========================================
+
+【步驟 3.1】設定 Secret
+-------------------
+1. GitHub → Settings
+2. Secrets and variables → Actions
+3. New repository secret
+4. Name: VITE_API_URL
+5. Value: https://wa-bao-qu-campus.onrender.com
+6. Add secret
+
+【步驟 3.2】啟用 GitHub Pages
+-------------------
+1. Settings → Pages
+2. Source: GitHub Actions
+3. 完成
+
+【步驟 3.3】觸發部署
+-------------------
+1. Actions 標籤
+2. Deploy to GitHub Pages
+3. Run workflow → Run workflow
+4. 等待 2-3 分鐘
+
+========================================
+步驟 4：查看結果
+========================================
+
+【查看網址】
+Settings → Pages
+會顯示：https://Yourname1218.github.io/student-marketplace/
+
+【測試】
+1. 開啟網址
+2. 登入測試：xiaoming@student.edu.tw / 123456
+3. 檢查功能是否正常
+
+========================================
+完成！
+========================================
+
+你的網站網址：
+https://Yourname1218.github.io/student-marketplace/
+
+後端網址：
+https://wa-bao-qu-campus.onrender.com
+
+========================================
+
