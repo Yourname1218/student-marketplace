@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // GitHub Pages 根目錄部署
+  base: process.env.NODE_ENV === 'production' ? '/student-marketplace/' : '/',
   server: {
     port: 3000,
     proxy: {
