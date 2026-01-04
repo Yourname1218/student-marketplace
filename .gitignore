@@ -1,0 +1,25 @@
+# 建立 .gitignore
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.local
+.env.production.local
+
+# 保留 .env.production（部署時需要）
+!.env.production
+
+# SQLite 資料庫
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.vscode/
+.idea/
+
+# 暫存檔案
+*.swp
+*.swo
+*~

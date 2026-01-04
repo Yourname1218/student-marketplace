@@ -1,0 +1,22 @@
+# Render 部署設定檔
+# https://render.com
+
+services:
+  - type: web
+    name: student-marketplace-api
+    runtime: node
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 5000
+    healthCheckPath: /api
+
