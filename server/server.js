@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? [
-        'https://Yourname1218.github.io',,
+        'https://yourname1218.github.io',
         'http://localhost:3000'
       ]
     : '*',
